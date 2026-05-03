@@ -130,6 +130,9 @@ function InboxPage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
               <Sparkles className="h-3.5 w-3.5 text-primary" /> Verified Inbox by Scamterns
+              <span className="rounded-full bg-primary/15 text-primary px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider">
+                Beta
+              </span>
             </div>
             <h1 className="mt-4 text-3xl lg:text-5xl font-semibold tracking-tight leading-[1.05]">
               The inbox that flags <span className="text-primary">scam internships</span> before you click.
