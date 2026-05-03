@@ -130,6 +130,9 @@ function InboxPage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
               <Sparkles className="h-3.5 w-3.5 text-primary" /> Verified Inbox by Scamterns
+              <span className="rounded-full bg-primary/15 text-primary px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider">
+                Beta
+              </span>
             </div>
             <h1 className="mt-4 text-3xl lg:text-5xl font-semibold tracking-tight leading-[1.05]">
               The inbox that flags <span className="text-primary">scam internships</span> before you click.
@@ -158,6 +161,10 @@ function InboxPage() {
                 </Button>
               </a>
             </div>
+            <p className="mt-4 text-xs text-muted-foreground italic">
+              Heads up — Scamterns is still in active testing. Detections may occasionally
+              miss or over-flag emails. Always double-check before acting on any offer.
+            </p>
             <div className="mt-6 flex items-center gap-5 text-xs text-muted-foreground">
               <span className="flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-[color:var(--success)]" /> SOC2-style heuristics</span>
               <span className="flex items-center gap-1.5"><AlertTriangle className="h-4 w-4 text-[color:var(--warn)]" /> 12k+ scams blocked</span>
