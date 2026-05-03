@@ -86,7 +86,7 @@ const EMAILS: Email[] = [
   },
 ];
 
-const FOLDERS = [
+const FOLDERS: { id: string; label: string; icon: typeof Inbox; count?: number }[] = [
   { id: "inbox", label: "Inbox", icon: Inbox, count: 5 },
   { id: "starred", label: "Starred", icon: Star },
   { id: "verified", label: "Verified", icon: ShieldCheck, count: 2 },
@@ -94,9 +94,9 @@ const FOLDERS = [
   { id: "sent", label: "Sent", icon: Send },
   { id: "drafts", label: "Drafts", icon: FileText },
   { id: "trash", label: "Trash", icon: Trash2 },
-] as const;
+];
 
-type FolderId = typeof FOLDERS[number]["id"];
+type FolderId = string;
 
 function scoreOf(e: Email) {
   return scanInput({ kind: "email", sender: e.email, subject: e.subject, body: e.body });
