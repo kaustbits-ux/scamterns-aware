@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { ScoreRing } from "./index";
+// inline ScoreRing below
 import { scanInput, type ScanInput, type ScanResult } from "@/lib/scam";
 import { toast } from "sonner";
 
@@ -192,6 +192,28 @@ function ResultCard({ result, onReset }: { result: ScanResult; onReset: () => vo
         <Button variant="outline" size="sm" onClick={() => toast.success("Saved to your dashboard")} className="gap-2"><Save className="h-4 w-4" />Save Result</Button>
         <Button variant="outline" size="sm" onClick={() => toast.success("Reported to moderators")} className="gap-2"><Flag className="h-4 w-4" />Report Scam</Button>
         <Button size="sm" onClick={onReset} className="gap-2"><RotateCcw className="h-4 w-4" />Scan Another</Button>
+      </div>
+    </div>
+  );
+}
+
+function ScoreRing({ score, tone, size = 140 }: { score: number; tone: "safe" | "warn" | "danger"; size?: number }) {
+  const color = tone === "danger" ? "var(--danger)" : tone === "warn" ? "var(--warn)" : "var(--success)";
+  const r = (size - 12) / 2;
+  const c = 2 * Math.PI * r;
+  const off = c - (score / 100) * c;
+  return (
+    <div className="relative" style={{ width: size, height: size }}>
+      <svg width={size} height={size} className="-rotate-90">
+        <circle cx={size / 2} cy={size / 2} r={r} stroke="var(--border)" strokeWidth={10} fill="none" />
+        <circle cx={size / 2} cy={size / 2} r={r} stroke={color} strokeWidth={10} fill="none"
+          strokeLinecap="round" strokeDasharray={c} strokeDashoffset={off} style={{ transition: "stroke-dashoffset 0.8s ease" }} />
+      </svg>
+      <div className="absolute inset-0 grid place-items-center">
+        <div className="text-center">
+          <div className="text-3xl font-bold" style={{ color }}>{score}</div>
+          <div className="text-[10px] uppercase tracking-widest text-muted-foreground">/ 100</div>
+        </div>
       </div>
     </div>
   );
