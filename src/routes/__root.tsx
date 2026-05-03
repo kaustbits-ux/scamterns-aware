@@ -31,19 +31,25 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "CyberSafety — Trusted Scan Engine for Internships & Job Offers" },
+      { title: "Scamterns — Trusted Scan Engine for Internships & Job Offers" },
       {
         name: "description",
         content:
           "Detect fake internships, scam recruiters, and phishing job offers instantly. CyberSafety helps students apply with confidence.",
       },
-      { property: "og:title", content: "CyberSafety — Don't Get Scammed Applying for Internships" },
+      { property: "og:title", content: "Scamterns — Trusted Scan Engine for Internships & Job Offers" },
       {
         property: "og:description",
         content: "Analyze suspicious emails, recruiter messages, and job listings instantly.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Scamterns — Trusted Scan Engine for Internships & Job Offers" },
+      { name: "description", content: "An email verification tool for BITS Pilani Dubai Campus. Instantly distinguish between official administrative communications and external phishing" },
+      { property: "og:description", content: "An email verification tool for BITS Pilani Dubai Campus. Instantly distinguish between official administrative communications and external phishing" },
+      { name: "twitter:description", content: "An email verification tool for BITS Pilani Dubai Campus. Instantly distinguish between official administrative communications and external phishing" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/3e80053f-6f22-4d37-9349-ee9c538dd233" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/3e80053f-6f22-4d37-9349-ee9c538dd233" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
