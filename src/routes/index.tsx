@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { scanInput } from "@/lib/scam";
 
 export const Route = createFileRoute("/")({
-  head: () => ({ meta: [{ title: "CyberSafety — Verified Inbox" }] }),
+  head: () => ({ meta: [{ title: "Scamterns — Verified Inbox" }] }),
   component: InboxPage,
 });
 
@@ -129,7 +129,7 @@ function InboxPage() {
         <div className="mx-auto max-w-7xl px-5 py-10 lg:py-14 grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
-              <Sparkles className="h-3.5 w-3.5 text-primary" /> Verified Inbox by CyberSafety
+              <Sparkles className="h-3.5 w-3.5 text-primary" /> Verified Inbox by Scamterns
             </div>
             <h1 className="mt-4 text-3xl lg:text-5xl font-semibold tracking-tight leading-[1.05]">
               The inbox that flags <span className="text-primary">scam internships</span> before you click.
@@ -139,8 +139,24 @@ function InboxPage() {
               real time so students never fall for fake interviews, registration fees, or phishing offers.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              <Link to="/checker"><Button size="lg" className="shadow-soft">Scan an email</Button></Link>
-              <Link to="/jobs"><Button size="lg" variant="outline">Browse verified jobs</Button></Link>
+              <Link to="/checker">
+                <Button size="lg" className="shadow-soft gap-2">
+                  Scan an email
+                  <span className="rounded-full bg-white/20 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider">
+                    Beta
+                  </span>
+                </Button>
+              </Link>
+              <a
+                href="https://phishingquiz.withgoogle.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button size="lg" variant="outline" className="gap-2">
+                  <Sparkles className="h-4 w-4" />
+                  Play scam-mail mini game
+                </Button>
+              </a>
             </div>
             <div className="mt-6 flex items-center gap-5 text-xs text-muted-foreground">
               <span className="flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-[color:var(--success)]" /> SOC2-style heuristics</span>
