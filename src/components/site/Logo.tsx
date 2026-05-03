@@ -33,11 +33,12 @@ function MailLockMark({ className = "" }: { className?: string }) {
     >
       {/* Envelope */}
       <rect x="2.5" y="5.5" width="19" height="13" rx="2.2" />
-      <path d="M3 7l9 6.2L21 7" />
-      {/* Lock stamp (top-right corner) */}
-      <rect x="14.5" y="2.5" width="7" height="6.2" rx="1.2" fill="currentColor" stroke="none" opacity="0.18" />
-      <rect x="15.6" y="4.6" width="4.8" height="3.4" rx="0.7" fill="currentColor" stroke="none" />
-      <path d="M16.7 4.6V3.9a1.3 1.3 0 0 1 2.6 0v.7" stroke="currentColor" />
+      <path d="M3 7l9 6.2L21 7" opacity="0.55" />
+      {/* Lock stamp — centered */}
+      <rect x="8.4" y="9.2" width="7.2" height="6.6" rx="1.1" fill="currentColor" stroke="currentColor" />
+      <path d="M9.9 9.2V8.1a2.1 2.1 0 0 1 4.2 0v1.1" stroke="currentColor" fill="none" strokeWidth={1.6} />
+      <circle cx="12" cy="12.4" r="0.7" fill="var(--primary, #1e3a8a)" stroke="none" />
+      <path d="M12 12.7v1.3" stroke="var(--primary, #1e3a8a)" strokeWidth={1.2} />
     </svg>
   );
 }
