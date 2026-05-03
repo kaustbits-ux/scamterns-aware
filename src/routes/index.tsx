@@ -323,14 +323,14 @@ function InboxStatsCard() {
         <span className="text-xs text-muted-foreground">live</span>
       </div>
       <div className="grid grid-cols-3 gap-3">
-        <Stat label="Verified" value="142" tone="success" />
-        <Stat label="Suspicious" value="38" tone="warn" />
-        <Stat label="High Risk" value="11" tone="danger" />
+        <Stat label="Verified" value="24" tone="success" />
+        <Stat label="Suspicious" value="6" tone="warn" />
+        <Stat label="High Risk" value="2" tone="danger" />
       </div>
       <div className="mt-4 space-y-2">
-        <PreviewRow status="High Risk" sender="hr-team@globaljobs-hire.xyz" subject="URGENT: Pay ₹4,999 to confirm…" />
-        <PreviewRow status="Suspicious" sender="no-reply@micros0ft-careers.top" subject="Final notice — verify account" />
-        <PreviewRow status="Safe" sender="riya.k@stripe.com" subject="Interview invitation — SWE Intern" />
+        <PreviewRow status="High Risk" sender="hr-team@gulfjobs-hire.xyz" subject="URGENT: Pay AED 850 to confirm…" />
+        <PreviewRow status="Suspicious" sender="no-reply@em1rates-careers.top" subject="Final notice — verify account" />
+        <PreviewRow status="Safe" sender="aisha.r@careem.com" subject="Interview invitation — SWE Intern, Dubai" />
       </div>
     </div>
   );
