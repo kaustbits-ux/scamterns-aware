@@ -161,6 +161,10 @@ function InboxPage() {
                 </Button>
               </a>
             </div>
+            <p className="mt-4 text-xs text-muted-foreground italic">
+              Heads up — Scamterns is still in active testing. Detections may occasionally
+              miss or over-flag emails. Always double-check before acting on any offer.
+            </p>
             <div className="mt-6 flex items-center gap-5 text-xs text-muted-foreground">
               <span className="flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-[color:var(--success)]" /> SOC2-style heuristics</span>
               <span className="flex items-center gap-1.5"><AlertTriangle className="h-4 w-4 text-[color:var(--warn)]" /> 12k+ scams blocked</span>
