@@ -29,59 +29,59 @@ type Email = {
 
 const EMAILS: Email[] = [
   {
-    id: "1", sender: "Career Services BPDC", email: "careers@bits-pilani.ac.in",
-    subject: "Summer Internship Drive 2026 — Pre-placement talk",
-    preview: "Dear students, the pre-placement talk for Stripe is scheduled on Monday at 4 PM in the auditorium…",
-    body: "Dear students, the pre-placement talk for Stripe is scheduled on Monday at 4 PM in the auditorium. Please register through the portal.",
+    id: "1", sender: "Career Services BPDC", email: "careers@dubai.bits-pilani.ac.in",
+    subject: "Summer Internship Drive 2026 — Pre-placement talk (DIFC)",
+    preview: "Dear students, the pre-placement talk by Emirates NBD is scheduled on Monday at 4 PM in the BPDC auditorium…",
+    body: "Dear students, the pre-placement talk by Emirates NBD is scheduled on Monday at 4 PM in the BPDC auditorium, Academic City. Please register through the placement portal.",
     time: "10:24 AM", unread: true, starred: true, label: "internal",
   },
   {
-    id: "2", sender: "Riya — Stripe Recruiting", email: "riya.k@stripe.com",
-    subject: "Interview invitation — Software Engineering Intern",
-    preview: "Hi, thanks for applying. We'd like to schedule a technical screen next week. Please pick a slot…",
-    body: "Hi, thanks for applying to the SWE Intern role at Stripe. We'd like to schedule a 45-min technical screen next week. Please pick a slot from the calendar link.",
+    id: "2", sender: "Aisha — Careem Recruiting", email: "aisha.r@careem.com",
+    subject: "Interview invitation — Software Engineering Intern, Dubai",
+    preview: "Hi, thanks for applying to Careem. We'd like to schedule a technical screen for our Dubai HQ team next week…",
+    body: "Hi, thanks for applying to the SWE Intern role at Careem (Dubai Internet City HQ). We'd like to schedule a 45-min technical screen next week. Please pick a slot from the calendar link.",
     time: "9:02 AM", unread: true, starred: false, label: "verified",
   },
   {
-    id: "3", sender: "Global HR Solutions", email: "hr-team@globaljobs-hire.xyz",
-    subject: "URGENT: Confirm your selection — Pay registration fee within 24 hours",
-    preview: "Congratulations! You have been selected for our remote internship. Pay ₹4,999 registration fee immediately via UPI…",
-    body: "Congratulations! You have been selected for our amazing remote internship opportunity. Kindly do the needful and pay ₹4,999 registration fee immediately via UPI within 24 hours to confirm your selection. Send your Aadhaar copy and bank account details ASAP. This is a limited time offer, act now.",
+    id: "3", sender: "Gulf HR Solutions", email: "hr-team@gulfjobs-hire.xyz",
+    subject: "URGENT: Confirm your Dubai internship — Pay AED 850 within 24 hours",
+    preview: "Congratulations! You have been selected for a remote internship with a Dubai firm. Pay AED 850 registration fee via bank transfer…",
+    body: "Congratulations! You have been selected for our amazing Dubai-based remote internship opportunity. Kindly do the needful and pay AED 850 registration fee immediately via bank transfer within 24 hours to confirm your selection. Send your Emirates ID copy and bank account details ASAP. This is a limited time offer, act now.",
     time: "Yesterday", unread: true, starred: false, label: "external",
   },
   {
     id: "4", sender: "LinkedIn Jobs", email: "jobs-noreply@linkedin.com",
-    subject: "5 new internships matching your profile",
-    preview: "Based on your profile, here are this week's top picks from companies hiring CS interns…",
-    body: "Based on your profile, here are this week's top picks: Razorpay, Notion, Figma, Linear, GitHub.",
+    subject: "5 new internships in Dubai matching your profile",
+    preview: "Based on your profile, here are this week's top picks from companies hiring interns in the UAE…",
+    body: "Based on your profile, here are this week's top picks in Dubai & Abu Dhabi: Emirates NBD, Careem, Talabat, e&, and Mashreq Bank.",
     time: "Yesterday", unread: false, starred: false, label: "external",
   },
   {
-    id: "5", sender: "Microsoft Careers", email: "no-reply@micros0ft-careers.top",
-    subject: "Final notice — verify your account to receive offer letter",
-    preview: "Dear esteemed candidate, click the link below to verify your bank account and receive your offer letter…",
-    body: "Dear esteemed candidate, click the link below to verify your bank account and receive your offer letter. Final notice. Please revert back with your password and OTP within 24 hours.",
+    id: "5", sender: "Emirates Group Careers", email: "no-reply@em1rates-careers.top",
+    subject: "Final notice — verify your account to receive Dubai offer letter",
+    preview: "Dear esteemed candidate, click the link below to verify your UAE bank account and receive your offer letter…",
+    body: "Dear esteemed candidate, click the link below to verify your UAE bank account and receive your Emirates Group offer letter. Final notice. Please revert back with your password and OTP within 24 hours.",
     time: "Mon", unread: true, starred: false, label: "external",
   },
   {
-    id: "6", sender: "Prof. Anand Iyer", email: "anand.iyer@bits-pilani.ac.in",
+    id: "6", sender: "Prof. Anand Iyer", email: "anand.iyer@dubai.bits-pilani.ac.in",
     subject: "Re: Project review on Friday",
     preview: "Sounds good. Please share your slides by Thursday evening so I can go through them before the meeting.",
-    body: "Sounds good. Please share your slides by Thursday evening so I can go through them before the meeting.",
+    body: "Sounds good. Please share your slides by Thursday evening so I can go through them before our Friday review at the Dubai campus.",
     time: "Mon", unread: false, starred: true, label: "internal",
   },
   {
-    id: "7", sender: "Notion Talent", email: "talent@notion.so",
-    subject: "Next steps — Product Design Intern",
-    preview: "Hey! Thanks again for the chat. We'd love to move you to the design exercise round…",
-    body: "Hey! Thanks again for the chat. We'd love to move you to the design exercise round. You'll have 5 days to complete it.",
+    id: "7", sender: "Talabat Talent", email: "talent@talabat.com",
+    subject: "Next steps — Product Design Intern, Dubai",
+    preview: "Hey! Thanks again for the chat. We'd love to move you to the design exercise round for our Dubai office…",
+    body: "Hey! Thanks again for the chat. We'd love to move you to the design exercise round for the Dubai HQ team. You'll have 5 days to complete it.",
     time: "Sun", unread: false, starred: false, label: "verified",
   },
   {
-    id: "8", sender: "Crypto Jobs Daily", email: "rewards@cryptojobs-bonus.click",
-    subject: "Earn $5000/week working from anywhere — no experience needed",
-    preview: "Guaranteed selection. Send your passport copy and we'll wire transfer the joining bonus immediately…",
-    body: "Guaranteed selection. Send your passport copy and we'll wire transfer the joining bonus immediately. Easy money, work from anywhere, no experience needed. Pay small processing fee in bitcoin.",
+    id: "8", sender: "Dubai Crypto Jobs", email: "rewards@dubaicrypto-bonus.click",
+    subject: "Earn AED 18,000/week from your JBR apartment — no experience needed",
+    preview: "Guaranteed selection. Send your passport copy and we'll wire transfer the joining bonus to your UAE account immediately…",
+    body: "Guaranteed selection for a Dubai-based remote role. Send your passport and Emirates ID copy and we'll wire transfer the joining bonus to your UAE account immediately. Easy money, work from your JBR apartment, no experience needed. Pay small AED processing fee in bitcoin.",
     time: "Sat", unread: false, starred: false, label: "external",
   },
 ];
@@ -166,8 +166,8 @@ function InboxPage() {
               miss or over-flag emails. Always double-check before acting on any offer.
             </p>
             <div className="mt-6 flex items-center gap-5 text-xs text-muted-foreground">
-              <span className="flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-[color:var(--success)]" /> SOC2-style heuristics</span>
-              <span className="flex items-center gap-1.5"><AlertTriangle className="h-4 w-4 text-[color:var(--warn)]" /> 12k+ scams blocked</span>
+              <span className="flex items-center gap-1.5"><ShieldCheck className="h-4 w-4 text-[color:var(--success)]" /> Heuristic checks</span>
+              <span className="flex items-center gap-1.5"><AlertTriangle className="h-4 w-4 text-[color:var(--warn)]" /> 120+ scams flagged in beta</span>
             </div>
           </div>
           <InboxStatsCard />
@@ -323,14 +323,14 @@ function InboxStatsCard() {
         <span className="text-xs text-muted-foreground">live</span>
       </div>
       <div className="grid grid-cols-3 gap-3">
-        <Stat label="Verified" value="142" tone="success" />
-        <Stat label="Suspicious" value="38" tone="warn" />
-        <Stat label="High Risk" value="11" tone="danger" />
+        <Stat label="Verified" value="24" tone="success" />
+        <Stat label="Suspicious" value="6" tone="warn" />
+        <Stat label="High Risk" value="2" tone="danger" />
       </div>
       <div className="mt-4 space-y-2">
-        <PreviewRow status="High Risk" sender="hr-team@globaljobs-hire.xyz" subject="URGENT: Pay ₹4,999 to confirm…" />
-        <PreviewRow status="Suspicious" sender="no-reply@micros0ft-careers.top" subject="Final notice — verify account" />
-        <PreviewRow status="Safe" sender="riya.k@stripe.com" subject="Interview invitation — SWE Intern" />
+        <PreviewRow status="High Risk" sender="hr-team@gulfjobs-hire.xyz" subject="URGENT: Pay AED 850 to confirm…" />
+        <PreviewRow status="Suspicious" sender="no-reply@em1rates-careers.top" subject="Final notice — verify account" />
+        <PreviewRow status="Safe" sender="aisha.r@careem.com" subject="Interview invitation — SWE Intern, Dubai" />
       </div>
     </div>
   );
