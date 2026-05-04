@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button";
 const NAV = [
   { to: "/", label: "Home" },
   { to: "/checker", label: "Checker" },
-  { to: "/jobs", label: "Verified Jobs" },
+  { to: "/journey", label: "Our Journey" },
+  { to: "/mission", label: "Our Mission" },
+  { to: "/contact", label: "Contact Us" },
   { to: "/reviews", label: "Reviews" },
-  { to: "/recruiters", label: "For Recruiters" },
-  { to: "/pricing", label: "Pricing" },
 ] as const;
 
 export function Navbar({ theme, onToggleTheme }: { theme: "light" | "dark"; onToggleTheme: () => void }) {

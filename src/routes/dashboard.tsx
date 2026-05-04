@@ -81,7 +81,7 @@ function Dashboard() {
             <div className="mt-3 flex items-center gap-2 text-sm">
               <CreditCard className="h-3.5 w-3.5 text-muted-foreground" />
               <span>Pro Student</span>
-              <Link to="/pricing" className="ml-auto text-xs text-primary">Manage</Link>
+              <Link to="/contact" className="ml-auto text-xs text-primary">Manage</Link>
             </div>
           </div>
         </aside>

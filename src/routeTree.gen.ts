@@ -10,11 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ReviewsRouteImport } from './routes/reviews'
-import { Route as RecruitersRouteImport } from './routes/recruiters'
-import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as MissionRouteImport } from './routes/mission'
 import { Route as LoginRouteImport } from './routes/login'
-import { Route as JobsRouteImport } from './routes/jobs'
+import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CheckerRouteImport } from './routes/checker'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
@@ -24,14 +24,9 @@ const ReviewsRoute = ReviewsRouteImport.update({
   path: '/reviews',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RecruitersRoute = RecruitersRouteImport.update({
-  id: '/recruiters',
-  path: '/recruiters',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
+const MissionRoute = MissionRouteImport.update({
+  id: '/mission',
+  path: '/mission',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -39,14 +34,19 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const JobsRoute = JobsRouteImport.update({
-  id: '/jobs',
-  path: '/jobs',
+const JourneyRoute = JourneyRouteImport.update({
+  id: '/journey',
+  path: '/journey',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CheckerRoute = CheckerRouteImport.update({
@@ -69,22 +69,22 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/checker': typeof CheckerRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
-  '/jobs': typeof JobsRoute
+  '/journey': typeof JourneyRoute
   '/login': typeof LoginRoute
-  '/pricing': typeof PricingRoute
-  '/recruiters': typeof RecruitersRoute
+  '/mission': typeof MissionRoute
   '/reviews': typeof ReviewsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/checker': typeof CheckerRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
-  '/jobs': typeof JobsRoute
+  '/journey': typeof JourneyRoute
   '/login': typeof LoginRoute
-  '/pricing': typeof PricingRoute
-  '/recruiters': typeof RecruitersRoute
+  '/mission': typeof MissionRoute
   '/reviews': typeof ReviewsRoute
 }
 export interface FileRoutesById {
@@ -92,11 +92,11 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/checker': typeof CheckerRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
-  '/jobs': typeof JobsRoute
+  '/journey': typeof JourneyRoute
   '/login': typeof LoginRoute
-  '/pricing': typeof PricingRoute
-  '/recruiters': typeof RecruitersRoute
+  '/mission': typeof MissionRoute
   '/reviews': typeof ReviewsRoute
 }
 export interface FileRouteTypes {
@@ -105,33 +105,33 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/checker'
+    | '/contact'
     | '/dashboard'
-    | '/jobs'
+    | '/journey'
     | '/login'
-    | '/pricing'
-    | '/recruiters'
+    | '/mission'
     | '/reviews'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/admin'
     | '/checker'
+    | '/contact'
     | '/dashboard'
-    | '/jobs'
+    | '/journey'
     | '/login'
-    | '/pricing'
-    | '/recruiters'
+    | '/mission'
     | '/reviews'
   id:
     | '__root__'
     | '/'
     | '/admin'
     | '/checker'
+    | '/contact'
     | '/dashboard'
-    | '/jobs'
+    | '/journey'
     | '/login'
-    | '/pricing'
-    | '/recruiters'
+    | '/mission'
     | '/reviews'
   fileRoutesById: FileRoutesById
 }
@@ -139,11 +139,11 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   CheckerRoute: typeof CheckerRoute
+  ContactRoute: typeof ContactRoute
   DashboardRoute: typeof DashboardRoute
-  JobsRoute: typeof JobsRoute
+  JourneyRoute: typeof JourneyRoute
   LoginRoute: typeof LoginRoute
-  PricingRoute: typeof PricingRoute
-  RecruitersRoute: typeof RecruitersRoute
+  MissionRoute: typeof MissionRoute
   ReviewsRoute: typeof ReviewsRoute
 }
 
@@ -156,18 +156,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/recruiters': {
-      id: '/recruiters'
-      path: '/recruiters'
-      fullPath: '/recruiters'
-      preLoaderRoute: typeof RecruitersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
+    '/mission': {
+      id: '/mission'
+      path: '/mission'
+      fullPath: '/mission'
+      preLoaderRoute: typeof MissionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -177,11 +170,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/jobs': {
-      id: '/jobs'
-      path: '/jobs'
-      fullPath: '/jobs'
-      preLoaderRoute: typeof JobsRouteImport
+    '/journey': {
+      id: '/journey'
+      path: '/journey'
+      fullPath: '/journey'
+      preLoaderRoute: typeof JourneyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -189,6 +182,13 @@ declare module '@tanstack/react-router' {
       path: '/dashboard'
       fullPath: '/dashboard'
       preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/checker': {
@@ -219,11 +219,11 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   CheckerRoute: CheckerRoute,
+  ContactRoute: ContactRoute,
   DashboardRoute: DashboardRoute,
-  JobsRoute: JobsRoute,
+  JourneyRoute: JourneyRoute,
   LoginRoute: LoginRoute,
-  PricingRoute: PricingRoute,
-  RecruitersRoute: RecruitersRoute,
+  MissionRoute: MissionRoute,
   ReviewsRoute: ReviewsRoute,
 }
 export const routeTree = rootRouteImport
