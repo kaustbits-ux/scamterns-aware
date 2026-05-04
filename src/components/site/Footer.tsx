@@ -29,17 +29,16 @@ export function Footer() {
           <div className="text-sm font-semibold mb-3">Product</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><Link to="/checker" className="hover:text-foreground">Scam Checker</Link></li>
-            <li><Link to="/jobs" className="hover:text-foreground">Verified Jobs</Link></li>
             <li><Link to="/reviews" className="hover:text-foreground">Community Reviews</Link></li>
-            <li><Link to="/pricing" className="hover:text-foreground">Pricing</Link></li>
+            <li><Link to="/mission" className="hover:text-foreground">Our Mission</Link></li>
           </ul>
         </div>
 
         <div>
           <div className="text-sm font-semibold mb-3">Company</div>
           <ul className="space-y-2 text-sm text-muted-foreground">
-            <li><Link to="/recruiters" className="hover:text-foreground">For Recruiters</Link></li>
-            <li><a href="#" className="hover:text-foreground">About</a></li>
+            <li><Link to="/journey" className="hover:text-foreground">Our Journey</Link></li>
+            <li><Link to="/contact" className="hover:text-foreground">Contact Us</Link></li>
             <li><a href="#" className="hover:text-foreground">Privacy</a></li>
             <li><a href="#" className="hover:text-foreground">Terms</a></li>
           </ul>
