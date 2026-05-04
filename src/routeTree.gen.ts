@@ -10,10 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ReviewsRouteImport } from './routes/reviews'
-import { Route as RecruitersRouteImport } from './routes/recruiters'
-import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as LoginRouteImport } from './routes/login'
-import { Route as JobsRouteImport } from './routes/jobs'
+import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as CheckerRouteImport } from './routes/checker'
 import { Route as AdminRouteImport } from './routes/admin'
@@ -24,24 +22,14 @@ const ReviewsRoute = ReviewsRouteImport.update({
   path: '/reviews',
   getParentRoute: () => rootRouteImport,
 } as any)
-const RecruitersRoute = RecruitersRouteImport.update({
-  id: '/recruiters',
-  path: '/recruiters',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PricingRoute = PricingRouteImport.update({
-  id: '/pricing',
-  path: '/pricing',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
-const JobsRoute = JobsRouteImport.update({
-  id: '/jobs',
-  path: '/jobs',
+const JourneyRoute = JourneyRouteImport.update({
+  id: '/journey',
+  path: '/journey',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DashboardRoute = DashboardRouteImport.update({
@@ -70,10 +58,8 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRoute
   '/checker': typeof CheckerRoute
   '/dashboard': typeof DashboardRoute
-  '/jobs': typeof JobsRoute
+  '/journey': typeof JourneyRoute
   '/login': typeof LoginRoute
-  '/pricing': typeof PricingRoute
-  '/recruiters': typeof RecruitersRoute
   '/reviews': typeof ReviewsRoute
 }
 export interface FileRoutesByTo {
@@ -81,10 +67,8 @@ export interface FileRoutesByTo {
   '/admin': typeof AdminRoute
   '/checker': typeof CheckerRoute
   '/dashboard': typeof DashboardRoute
-  '/jobs': typeof JobsRoute
+  '/journey': typeof JourneyRoute
   '/login': typeof LoginRoute
-  '/pricing': typeof PricingRoute
-  '/recruiters': typeof RecruitersRoute
   '/reviews': typeof ReviewsRoute
 }
 export interface FileRoutesById {
@@ -93,10 +77,8 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/checker': typeof CheckerRoute
   '/dashboard': typeof DashboardRoute
-  '/jobs': typeof JobsRoute
+  '/journey': typeof JourneyRoute
   '/login': typeof LoginRoute
-  '/pricing': typeof PricingRoute
-  '/recruiters': typeof RecruitersRoute
   '/reviews': typeof ReviewsRoute
 }
 export interface FileRouteTypes {
@@ -106,10 +88,8 @@ export interface FileRouteTypes {
     | '/admin'
     | '/checker'
     | '/dashboard'
-    | '/jobs'
+    | '/journey'
     | '/login'
-    | '/pricing'
-    | '/recruiters'
     | '/reviews'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -117,10 +97,8 @@ export interface FileRouteTypes {
     | '/admin'
     | '/checker'
     | '/dashboard'
-    | '/jobs'
+    | '/journey'
     | '/login'
-    | '/pricing'
-    | '/recruiters'
     | '/reviews'
   id:
     | '__root__'
@@ -128,10 +106,8 @@ export interface FileRouteTypes {
     | '/admin'
     | '/checker'
     | '/dashboard'
-    | '/jobs'
+    | '/journey'
     | '/login'
-    | '/pricing'
-    | '/recruiters'
     | '/reviews'
   fileRoutesById: FileRoutesById
 }
@@ -140,10 +116,8 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   CheckerRoute: typeof CheckerRoute
   DashboardRoute: typeof DashboardRoute
-  JobsRoute: typeof JobsRoute
+  JourneyRoute: typeof JourneyRoute
   LoginRoute: typeof LoginRoute
-  PricingRoute: typeof PricingRoute
-  RecruitersRoute: typeof RecruitersRoute
   ReviewsRoute: typeof ReviewsRoute
 }
 
@@ -156,20 +130,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReviewsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/recruiters': {
-      id: '/recruiters'
-      path: '/recruiters'
-      fullPath: '/recruiters'
-      preLoaderRoute: typeof RecruitersRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pricing': {
-      id: '/pricing'
-      path: '/pricing'
-      fullPath: '/pricing'
-      preLoaderRoute: typeof PricingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/login': {
       id: '/login'
       path: '/login'
@@ -177,11 +137,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/jobs': {
-      id: '/jobs'
-      path: '/jobs'
-      fullPath: '/jobs'
-      preLoaderRoute: typeof JobsRouteImport
+    '/journey': {
+      id: '/journey'
+      path: '/journey'
+      fullPath: '/journey'
+      preLoaderRoute: typeof JourneyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/dashboard': {
@@ -220,10 +180,8 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRoute,
   CheckerRoute: CheckerRoute,
   DashboardRoute: DashboardRoute,
-  JobsRoute: JobsRoute,
+  JourneyRoute: JourneyRoute,
   LoginRoute: LoginRoute,
-  PricingRoute: PricingRoute,
-  RecruitersRoute: RecruitersRoute,
   ReviewsRoute: ReviewsRoute,
 }
 export const routeTree = rootRouteImport
