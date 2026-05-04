@@ -150,16 +150,15 @@ function InboxPage() {
                   </span>
                 </Button>
               </Link>
-              <a
-                href="https://phishingquiz.withgoogle.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link to="/quiz">
                 <Button size="lg" variant="outline" className="gap-2">
                   <Sparkles className="h-4 w-4" />
                   Play scam-mail mini game
+                  <span className="rounded-full bg-primary/15 text-primary px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider">
+                    Beta
+                  </span>
                 </Button>
-              </a>
+              </Link>
             </div>
             <p className="mt-4 text-xs text-muted-foreground italic">
               Heads up — Scamterns is still in active testing. Detections may occasionally

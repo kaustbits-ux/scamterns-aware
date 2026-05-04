@@ -46,7 +46,10 @@ export function Navbar({ theme, onToggleTheme }: { theme: "light" | "dark"; onTo
           >
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
           </button>
-          <Link to="/login" className="hidden sm:block">
+          <Link to="/login" className="relative hidden sm:block">
+            <span className="absolute -top-1.5 -right-1.5 z-10 rounded-full bg-primary px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-primary-foreground shadow-soft">
+              Beta
+            </span>
             <Button variant="ghost" size="sm">Login</Button>
           </Link>
           <Link to="/checker" className="hidden sm:block">

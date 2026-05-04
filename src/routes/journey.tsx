@@ -1,11 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Milestone, Sparkles, Rocket, GraduationCap } from "lucide-react";
+import {
+  Milestone, AlertTriangle, Users, HelpCircle, Lightbulb, ShieldCheck, PenTool, Rocket,
+} from "lucide-react";
 
 export const Route = createFileRoute("/journey")({
   head: () => ({
     meta: [
       { title: "Our Journey — Scamterns" },
-      { name: "description", content: "How Scamterns started — from a campus problem at BITS Pilani Dubai to a beta scam-detection tool." },
+      { name: "description", content: "The Design Thinking journey behind Scamterns — from problem discovery to prototype and impact." },
     ],
   }),
   component: Journey,
@@ -13,54 +15,82 @@ export const Route = createFileRoute("/journey")({
 
 const STEPS = [
   {
-    icon: GraduationCap,
-    date: "Early 2025",
-    title: "The campus problem",
-    body: "Students at BITS Pilani Dubai Campus kept receiving suspicious internship offers — fake recruiters asking for AED registration fees, Emirates ID copies, and crypto 'training' deposits. We started collecting samples.",
+    icon: AlertTriangle,
+    tag: "Problem & Context",
+    title: "Understanding the Problem",
+    body: "Students frequently receive internship offers through emails and online platforms, but lack reliable ways to verify authenticity. Scam emails often mimic trusted brands and use urgency or payment requests to exploit students.",
   },
   {
-    icon: Sparkles,
-    date: "Mid 2025",
-    title: "First prototype",
-    body: "A small classifier trained on flagged emails from peers. It ran in a notebook and could only score pasted text — but it caught 4 out of 5 known scams in our test set.",
+    icon: Users,
+    tag: "User Research",
+    title: "User Research",
+    body: "We interviewed 8 students actively applying for internships. Most struggled to distinguish real opportunities and relied on brand names or urgency cues when making decisions.",
+  },
+  {
+    icon: HelpCircle,
+    tag: "Defining the Challenge",
+    title: "Problem Definition",
+    body: "How might we help students quickly verify internship opportunities before sharing personal information or committing time to potentially fraudulent applications?",
+  },
+  {
+    icon: Lightbulb,
+    tag: "Ideation",
+    title: "Ideation & Decision Making",
+    body: "We used SCAMPER to generate solutions and a Decision Matrix to evaluate them. A web-based platform was selected as the most effective and accessible solution.",
+  },
+  {
+    icon: ShieldCheck,
+    tag: "Solution",
+    title: "Our Solution",
+    body: "CyberSafety is a web platform that analyzes internship listings and emails to identify scam indicators and provide clear, easy-to-understand risk feedback.",
+  },
+  {
+    icon: PenTool,
+    tag: "Prototyping",
+    title: "Prototype Development",
+    body: "We created low-fidelity wireframes, high-fidelity designs, and a functional prototype with simulated scam detection logic to test usability and effectiveness.",
   },
   {
     icon: Rocket,
-    date: "Late 2025",
-    title: "Scamterns beta",
-    body: "We rebuilt the tool as a Gmail-style verifier with a Dubai-aware ruleset (BPDC domains, UAE recruiter patterns, AED-amount heuristics) and opened it to a small group of testers.",
-  },
-  {
-    icon: Milestone,
-    date: "2026",
-    title: "Where we are now",
-    body: "Still in active beta. Every detection is reviewed, the ruleset is updated weekly, and we're working with student volunteers to expand coverage beyond Dubai.",
+    tag: "Implementation & Impact",
+    title: "Execution & Impact",
+    body: "Using the Design Thinking framework, we built a structured roadmap and validated our approach through testing — aiming to make internship applications safer and more reliable for students.",
   },
 ];
 
 function Journey() {
   return (
-    <div className="mx-auto max-w-3xl px-5 py-16">
+    <div className="mx-auto max-w-6xl px-5 py-16">
       <div className="inline-flex items-center gap-2 rounded-full border border-border glass px-3 py-1 text-xs">
         <Milestone className="h-3.5 w-3.5 text-primary" /> Our Journey
       </div>
-      <h1 className="mt-4 text-3xl lg:text-4xl font-bold tracking-tight">From inbox frustration to a beta product</h1>
-      <p className="mt-3 text-muted-foreground">
-        Scamterns is a student-built project. Here's how it came together.
+      <h1 className="mt-4 text-3xl lg:text-4xl font-bold tracking-tight">A Design Thinking journey</h1>
+      <p className="mt-3 text-muted-foreground max-w-2xl">
+        Scamterns was built step by step using the Design Thinking framework — from understanding the problem to validating a working prototype.
       </p>
 
-      <ol className="mt-10 relative border-l border-border pl-6 space-y-8">
-        {STEPS.map((s) => (
-          <li key={s.title} className="relative">
-            <span className="absolute -left-[33px] grid h-6 w-6 place-items-center rounded-full border border-border bg-card">
-              <s.icon className="h-3.5 w-3.5 text-primary" />
-            </span>
-            <div className="text-xs uppercase tracking-wider text-muted-foreground">{s.date}</div>
-            <div className="font-semibold mt-0.5">{s.title}</div>
-            <p className="text-sm text-muted-foreground mt-1">{s.body}</p>
-          </li>
+      <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {STEPS.map((s, i) => (
+          <article
+            key={s.title}
+            className="rounded-xl border border-border bg-card p-6 shadow-soft hover:shadow-md transition"
+          >
+            <div className="flex items-center justify-between">
+              <span className="grid h-9 w-9 place-items-center rounded-lg bg-primary/10 text-primary">
+                <s.icon className="h-4.5 w-4.5" />
+              </span>
+              <span className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground">
+                Step {i + 1}
+              </span>
+            </div>
+            <div className="mt-4 text-[11px] font-semibold uppercase tracking-wider text-primary">
+              {s.tag}
+            </div>
+            <h3 className="mt-1 font-semibold text-lg">{s.title}</h3>
+            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{s.body}</p>
+          </article>
         ))}
-      </ol>
+      </div>
     </div>
   );
 }
