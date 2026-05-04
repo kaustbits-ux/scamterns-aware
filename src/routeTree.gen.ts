@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as MissionRouteImport } from './routes/mission'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as DashboardRouteImport } from './routes/dashboard'
@@ -21,6 +22,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const ReviewsRoute = ReviewsRouteImport.update({
   id: '/reviews',
   path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MissionRoute = MissionRouteImport.update({
+  id: '/mission',
+  path: '/mission',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -67,6 +73,7 @@ export interface FileRoutesByFullPath {
   '/dashboard': typeof DashboardRoute
   '/journey': typeof JourneyRoute
   '/login': typeof LoginRoute
+  '/mission': typeof MissionRoute
   '/reviews': typeof ReviewsRoute
 }
 export interface FileRoutesByTo {
@@ -77,6 +84,7 @@ export interface FileRoutesByTo {
   '/dashboard': typeof DashboardRoute
   '/journey': typeof JourneyRoute
   '/login': typeof LoginRoute
+  '/mission': typeof MissionRoute
   '/reviews': typeof ReviewsRoute
 }
 export interface FileRoutesById {
@@ -88,6 +96,7 @@ export interface FileRoutesById {
   '/dashboard': typeof DashboardRoute
   '/journey': typeof JourneyRoute
   '/login': typeof LoginRoute
+  '/mission': typeof MissionRoute
   '/reviews': typeof ReviewsRoute
 }
 export interface FileRouteTypes {
@@ -100,6 +109,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/journey'
     | '/login'
+    | '/mission'
     | '/reviews'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -110,6 +120,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/journey'
     | '/login'
+    | '/mission'
     | '/reviews'
   id:
     | '__root__'
@@ -120,6 +131,7 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/journey'
     | '/login'
+    | '/mission'
     | '/reviews'
   fileRoutesById: FileRoutesById
 }
@@ -131,6 +143,7 @@ export interface RootRouteChildren {
   DashboardRoute: typeof DashboardRoute
   JourneyRoute: typeof JourneyRoute
   LoginRoute: typeof LoginRoute
+  MissionRoute: typeof MissionRoute
   ReviewsRoute: typeof ReviewsRoute
 }
 
@@ -141,6 +154,13 @@ declare module '@tanstack/react-router' {
       path: '/reviews'
       fullPath: '/reviews'
       preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mission': {
+      id: '/mission'
+      path: '/mission'
+      fullPath: '/mission'
+      preLoaderRoute: typeof MissionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -203,6 +223,7 @@ const rootRouteChildren: RootRouteChildren = {
   DashboardRoute: DashboardRoute,
   JourneyRoute: JourneyRoute,
   LoginRoute: LoginRoute,
+  MissionRoute: MissionRoute,
   ReviewsRoute: ReviewsRoute,
 }
 export const routeTree = rootRouteImport
