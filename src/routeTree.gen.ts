@@ -13,6 +13,7 @@ import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as JourneyRouteImport } from './routes/journey'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CheckerRouteImport } from './routes/checker'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
@@ -37,6 +38,11 @@ const DashboardRoute = DashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CheckerRoute = CheckerRouteImport.update({
   id: '/checker',
   path: '/checker',
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/checker': typeof CheckerRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/journey': typeof JourneyRoute
   '/login': typeof LoginRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/checker': typeof CheckerRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/journey': typeof JourneyRoute
   '/login': typeof LoginRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/checker': typeof CheckerRoute
+  '/contact': typeof ContactRoute
   '/dashboard': typeof DashboardRoute
   '/journey': typeof JourneyRoute
   '/login': typeof LoginRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/checker'
+    | '/contact'
     | '/dashboard'
     | '/journey'
     | '/login'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/checker'
+    | '/contact'
     | '/dashboard'
     | '/journey'
     | '/login'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/checker'
+    | '/contact'
     | '/dashboard'
     | '/journey'
     | '/login'
@@ -115,6 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   CheckerRoute: typeof CheckerRoute
+  ContactRoute: typeof ContactRoute
   DashboardRoute: typeof DashboardRoute
   JourneyRoute: typeof JourneyRoute
   LoginRoute: typeof LoginRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/checker': {
       id: '/checker'
       path: '/checker'
@@ -179,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   CheckerRoute: CheckerRoute,
+  ContactRoute: ContactRoute,
   DashboardRoute: DashboardRoute,
   JourneyRoute: JourneyRoute,
   LoginRoute: LoginRoute,
